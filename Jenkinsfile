@@ -91,7 +91,7 @@ pipeline {
       steps {
         sh '''#!/bin/bash
 		  set -x 
-		  echo "PWD: $pwd"
+		  echo "PWD: $(pwd)"
 		  #cd $WORKSPACE
 		  SHORT_SHA=`git rev-parse --verify HEAD --short`
 		  #mkdir -p $WORKSPACE/ace-config
