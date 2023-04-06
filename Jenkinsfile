@@ -97,6 +97,7 @@ pipeline {
 		  SHORT_SHA=`git rev-parse --verify HEAD --short`
 		  rm -r ace-config
 		  git clone git@github.com:mverhiel/ace-config.git
+		  git checkout main
 		  ls -latr
 		  cp $HOME/$SERVICE_NAME-$BUILD_NUMBER.bar ./ace-config/$SERVICE_NAME/base-bar/$SERVICE_NAME-$BUILD_NUMBER-$SHORT_SHA.bar  
 		  ls -latr ./ace-config/$SERVICE_NAME/base-bar
