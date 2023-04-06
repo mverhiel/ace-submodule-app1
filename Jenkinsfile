@@ -19,9 +19,11 @@ pipeline {
       steps {
         sh  '''#!/bin/bash
 		    set -x
+			ls -la
             # Set HOME to somewhere writable by Junit
 			echo $
             export HOME=/tmp/$SERVICE_NAME
+			rm -rf $HOME
 			mkdir -p $HOME
 
             # Clean up just in case files have been left around
