@@ -67,6 +67,7 @@ pipeline {
       steps {
          sh  '''#!/bin/bash
 		   set -x
+		   export HOME=/tmp/$SERVICE_NAME
 		   . $MQSIPROFILE
 		   TIMESTAMP=$(date -u +'%Y%m%dT%H%M%S')
            # Build a single BAR file that contains everything rather than deploying multiple BAR files.
@@ -91,6 +92,7 @@ pipeline {
       steps {
         sh '''#!/bin/bash
 		  set -x 
+		  export HOME=/tmp/$SERVICE_NAME
 		  echo "PWD: $(pwd)"
 		  SHORT_SHA=`git rev-parse --verify HEAD --short`
 		  rm -r ace-config
