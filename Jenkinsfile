@@ -95,7 +95,8 @@ pipeline {
 		  export HOME=/tmp/$SERVICE_NAME
 		  echo "PWD: $(pwd)"
 		  SHORT_SHA=`git rev-parse --verify HEAD --short`
-		  rm -r ace-config
+		  rm -r $HOME/ace-config
+		  cd $HOME
 		  git clone git@github.com:mverhiel/ace-config.git
 		  git checkout main
 		  ls -latr
