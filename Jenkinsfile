@@ -91,16 +91,17 @@ pipeline {
       steps {
         sh '''#!/bin/bash
 		  set -x 
-		  cd $WORKSPACE
+		  echo "PWD: $pwd"
+		  #cd $WORKSPACE
 		  SHORT_SHA=`git rev-parse --verify HEAD --short`
-		  mkdir -p $WORKSPACE/ace-config
-		  cd ace-config
-		  git clone git@github.com:mverhiel/ace-config.git
-		  cp $HOME/$SERVICE_NAME-$BUILD_NUMBER.bar ./$SERVICE_NAME/base-bar/$SERVICE_NAME-$BUILD_NUMBER-$SHORT_SHA.bar  
-		  ls -latr ./$SERVICE_NAME/base-bar
-		  git add --all
-		  git commit -am "Service: $SERVICE_NAME / Build: $BUILD_NUMBER / Short SHA: $SHORT_SHA bar added"
-          git push --set-upstream origin main
+		  #mkdir -p $WORKSPACE/ace-config
+		  #cd ace-config
+		  #git clone git@github.com:mverhiel/ace-config.git
+		  #cp $HOME/$SERVICE_NAME-$BUILD_NUMBER.bar ./$SERVICE_NAME/base-bar/$SERVICE_NAME-$BUILD_NUMBER-$SHORT_SHA.bar  
+		  #ls -latr ./$SERVICE_NAME/base-bar
+		  #git add --all
+		  #git commit -am "Service: $SERVICE_NAME / Build: $BUILD_NUMBER / Short SHA: $SHORT_SHA bar added"
+          #git push --set-upstream origin main
 
 		  #. $MQSIPROFILE 
 		  #mqsideploy -i $ACE_HOST -p $ACE_PORT -e $ACE_SERVER -a $HOME/demo-application-combined.bar
