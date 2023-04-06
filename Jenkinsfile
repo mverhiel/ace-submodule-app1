@@ -98,9 +98,9 @@ pipeline {
 		  rm -r ace-config
 		  git clone git@github.com:mverhiel/ace-config.git
 		  ls -latr
-		  cp $HOME/$SERVICE_NAME-$BUILD_NUMBER.bar ./$SERVICE_NAME/base-bar/$SERVICE_NAME-$BUILD_NUMBER-$SHORT_SHA.bar  
-		  ls -latr ./$SERVICE_NAME/base-bar
-		  git add ./$SERVICE_NAME/base-bar
+		  cp $HOME/$SERVICE_NAME-$BUILD_NUMBER.bar ./ace-config/$SERVICE_NAME/base-bar/$SERVICE_NAME-$BUILD_NUMBER-$SHORT_SHA.bar  
+		  ls -latr ./ace-config/$SERVICE_NAME/base-bar
+		  git add ./ace-config/$SERVICE_NAME/base-bar
 		  git commit -am "Service: $SERVICE_NAME / Build: $BUILD_NUMBER / Short SHA: $SHORT_SHA bar added"
           git push --set-upstream origin main
 
