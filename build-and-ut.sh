@@ -12,6 +12,7 @@ set -x
 # Move submodule projects to the correct level to be picked up by ibmint
 find ace* -name ".project" -exec dirname {} ";" | xargs -n1 -i{} echo rm -r {} | grep -v Test | grep -v Scaffold > $HOME/move-projects.sh || /bin/true
 find ace* -name ".project" -exec dirname {} ";" | xargs -n1 -i{} echo cp -f {} .  | grep -v Test | grep -v Scaffold >> $HOME/move-projects.sh || /bin/true
+cat $HOME/move-projects.sh
 chmod 777 $HOME/move-projects.sh
 bash $HOME/move-projects.sh
 
