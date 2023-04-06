@@ -93,12 +93,13 @@ pipeline {
 		  set -x 
 		  echo "PWD: $(pwd)"
 		  SHORT_SHA=`git rev-parse --verify HEAD --short`
+		  rm -r ace-config
 		  mkdir -p ace-config
 		  cd ace-config
 		  git clone git@github.com:mverhiel/ace-config.git
 		  cp $HOME/$SERVICE_NAME-$BUILD_NUMBER.bar ./$SERVICE_NAME/base-bar/$SERVICE_NAME-$BUILD_NUMBER-$SHORT_SHA.bar  
 		  ls -latr ./$SERVICE_NAME/base-bar
-		  git add --all
+		  git add ./$SERVICE_NAME/base-bar
 		  git commit -am "Service: $SERVICE_NAME / Build: $BUILD_NUMBER / Short SHA: $SHORT_SHA bar added"
           git push --set-upstream origin main
 
