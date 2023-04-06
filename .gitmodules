@@ -1,8 +1,8 @@
 [submodule "ace-submodule-schemalib-level1"]
 	path = ace-submodule-schemalib-level1
-	url = git@github.com:trevor-dolby-at-ibm-com/ace-submodule-schemalib-level1.git
+	url = git@github.com:mverhiel/ace-submodule-schemalib-level1.git
 	branch = main
 [submodule "ace-submodule-subflowlib-level1"]
 	path = ace-submodule-subflowlib-level1
-	url = git@github.com:trevor-dolby-at-ibm-com/ace-submodule-subflowlib-level1.git
+	url = git@github.com:mverhiel/ace-submodule-subflowlib-level1.git
 	branch = main
