@@ -99,6 +99,7 @@ pipeline {
 		  mkdir -p ace-config
 		  cd ace-config
 		  git clone git@github.com:mverhiel/ace-config.git
+		  ls -latr
 		  cp $HOME/$SERVICE_NAME-$BUILD_NUMBER.bar ./$SERVICE_NAME/base-bar/$SERVICE_NAME-$BUILD_NUMBER-$SHORT_SHA.bar  
 		  ls -latr ./$SERVICE_NAME/base-bar
 		  git add ./$SERVICE_NAME/base-bar
