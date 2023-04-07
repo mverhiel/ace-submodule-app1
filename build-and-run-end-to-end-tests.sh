@@ -10,7 +10,7 @@
 # Exit on any failure
 set -x
 . $1
-ibmint deploy --input-path . --output-work-directory $HOME/ace-unit-test --project App1_EndToEndTest
+ibmint deploy --input-path . --output-work-directory $HOME/ace-unit-test --project ${SERVICE_NAME}_EndToEndTest
 
 # ibmint optimize server new for v12.0.4 - speed up test runs
 ibmint optimize server --work-directory $HOME/ace-unit-test --enable JVM --disable NodeJS
