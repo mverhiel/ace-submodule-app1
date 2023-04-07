@@ -27,6 +27,7 @@ pipeline {
             rm -f */junit-reports/TEST*.xml
             rm -rf $PWD/ace-server
     
+	        echo "PWD: $(pwd)"
             ./build-and-ut.sh $MQSIPROFILE 
             '''
 
