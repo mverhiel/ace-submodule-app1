@@ -4,10 +4,7 @@ pipeline {
     /* These values would be better moved to a configuration file and provided by */
     /* the Config File Provider plugin (or equivalent), but this is good enough   */
     /* for a demo of ACE pipelines that isn't intended as a Jenkins tutorial.     */
-    string(name: 'ACE_HOST',   defaultValue: '127.0.0.1', description: 'Integration node REST API host or IP address')
-    string(name: 'ACE_PORT',   defaultValue: '4414', description: 'Integration node REST API port')
-    string(name: 'ACE_SERVER',   defaultValue: 'IS01', description: 'Integration server name')
-	string(name: 'SERVICE_NAME',   description: 'service name being built and deployed')
+ 	string(name: 'SERVICE_NAME',   description: 'service name being built and deployed')
   }
   environment {
     LICENSE = 'accept'
@@ -69,8 +66,7 @@ pipeline {
 		   set -x
 		   export HOME=/tmp/$SERVICE_NAME
 		   . $MQSIPROFILE
-		   TIMESTAMP=$(date -u +'%Y%m%dT%H%M%S')
-           # Build a single BAR file that contains everything rather than deploying multiple BAR files.
+		   # Build a single BAR file that contains everything rather than deploying multiple BAR files.
            # Deploying multiple BAR files (for the shared libraries and the application) would work,
 	       # but would take longer on redeploys due to reloading the application on each deploy.
            #

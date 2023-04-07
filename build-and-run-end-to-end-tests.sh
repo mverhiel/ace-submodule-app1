@@ -16,5 +16,5 @@ ibmint deploy --input-path . --output-work-directory $HOME/ace-unit-test --proje
 ibmint optimize server --work-directory $HOME/ace-unit-test --enable JVM --disable NodeJS
 
 # Run the server to run the contract tests
-IntegrationServer -w $HOME/ace-unit-test --test-project ${SERVICE_NAME}_EndToEndTest --test-junit-options "--reports-dir=junit-reports"
+IntegrationServer -w $HOME/ace-unit-test --test-project ${SERVICE_NAME}_EndToEndTest --test-junit-options "--reports-dir=${HOME}/junit-reports"
 

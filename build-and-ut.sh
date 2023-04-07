@@ -17,7 +17,7 @@ bash $HOME/move-projects.sh
 
 
 # Create the work directory
-rm -rf $HOME/ace-unit-test junit-reports
+rm -rf $HOME/ace-unit-test $HOME/junit-reports
 mqsicreateworkdir $HOME/ace-unit-test
 
 # Build everything; we can do this in this case because we want to include the unit
@@ -28,4 +28,4 @@ ibmint deploy --input-path . --output-work-directory $HOME/ace-unit-test
 ibmint optimize server --work-directory $HOME/ace-unit-test --enable JVM --disable NodeJS
 
 # Run the server to run the unit tests
-IntegrationServer -w $HOME/ace-unit-test --test-project ${SERVICE_NAME}_UnitTest --test-junit-options "--reports-dir=junit-reports"
+IntegrationServer -w $HOME/ace-unit-test --test-project ${SERVICE_NAME}_UnitTest --test-junit-options "--reports-dir=${HOME}/junit-reports"
